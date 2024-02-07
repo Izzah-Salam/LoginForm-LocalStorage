@@ -1,4 +1,4 @@
-// evenr when user sign up the data
+// click event when user sign up the data
 
 const SignupBtn = document.getElementById("Signup");
 SignupBtn.addEventListener("click",signup)
@@ -23,4 +23,37 @@ function signup(){
    localStorage.setItem("confirmPass",confirmPass)
 
    
+}
+
+
+// click event when user sign in button click
+
+const signin = document.getElementById("signin")
+
+signin.addEventListener("click", signIn)
+
+
+// get value from sign in 
+
+function signIn(){
+    const signinUser = document.getElementById("username").value
+    const pass = document.getElementById("Pass").value
+
+
+    // getValue from local storage
+
+    const userName = localStorage.getItem("Username")
+    const password = localStorage.getItem("password")
+
+
+    // now compare local storage data and input data to authenticity
+
+    if(signinUser === userName && pass=== password){
+        window.location.href = "./welcome.html"
+    }
+
+    else{
+        alert("Wrong Email and Password")
+    }
+
 }
